@@ -1,0 +1,14 @@
+lh_desafio_ae:
+  target: dev
+  outputs:
+    dev:
+      dataset: dbt_mtf
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /home/mt3franca/indiciumtech/desafio_ae/desafiolh-0997586fda03.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: desafiolh
+      threads: 4
+      type: bigquery
