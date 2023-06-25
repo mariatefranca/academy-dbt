@@ -1,0 +1,32 @@
+version: 2
+
+models:
+ 
+    - name: stg_raw_salesorderdetail
+      description: Model with details of individual products associated with each sales order in salesorderheader.
+      columns:
+
+          - name: salesorderid_od
+            description: 'Order identification number, FK to salesordereader.salesorderid'
+            tests:
+              - not_null
+
+          - name: salesorderdetailid
+            description: 'Order detail identification number, PK'
+            tests:
+              - unique
+              - not_null
+
+          - name: orderqty
+            description: 'Quantity of product ordered'
+
+          - name: productid
+            description: 'Order identifition of the product sold, FK to product.productid'
+            tests:
+              - not_null
+
+          - name: unitprice
+            description: 'Selling price per unit'
+
+          - name: unitpricediscount
+            description: 'Discount'
