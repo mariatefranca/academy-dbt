@@ -85,14 +85,27 @@ sources:
                   tests:
                      - not_null
                -  name: salesreasonid
-                  description: 'Sales reason identification number, PK'
+                  description: 'Sales reason identification number, FK to salesreason.salesreasonid'
                   tests:
-                     - unique
                      - not_null
                -  name: modifieddate
                   description: 'Date and time the  sales reason was last updated'
                   tests:
                      - not_null
 
-            # -  name: salesreason
+         -  name: salesreason
+            description: 'Customer purchase reasons'
+            columns:
+               -  name: salesreasonid
+                  description: 'Sales reason identification number, PK'
+                  tests:
+                     - unique
+                     - not_null
+               -  name: name
+                  description: 'Sales reason description.'
+                  tests:
+                     - not_null
+
+            # -  name: 
             #    description: ''
+
