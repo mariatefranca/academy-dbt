@@ -69,7 +69,7 @@ sources:
                -  name: orderqty
                   description: 'Quantity of product ordered'
                -  name: productid
-                  description: 'Order identifition of the product sold, FK to product.productid'
+                  description: 'Identifition number of the product sold, FK to product.productid'
                   tests:
                     - not_null
                -  name: unitprice
@@ -102,10 +102,29 @@ sources:
                      - unique
                      - not_null
                -  name: name
-                  description: 'Sales reason description.'
+                  description: 'Sales reason description'
                   tests:
                      - not_null
 
-            # -  name: 
-            #    description: ''
+         -  name: product
+            description: 'Informations about products sold or used to manfacture sold products'
+            columns:
+               -  name: productid
+                  description: 'Identifition number of the product sold, PK'
+                  tests:
+                     - unique
+                     - not_null
+               -  name: name
+                  description: 'Name of the product'
+                  tests:
+                     - unique
+               -  name: subcategory
+                  description: 'Subcategory of the product'
+
+         # -  name: 
+         #    description: ''
+         # -  name: 
+         #    description: ''
+
+
 
