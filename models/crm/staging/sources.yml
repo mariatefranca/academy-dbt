@@ -133,8 +133,35 @@ sources:
                   description: 'Name of product subcategory'
 
 
+         -  name: creditcard
+            description: 'Customer credit card information'
+            columns:
+               -  name: creditcardid
+                  description: 'Identity number of customer credit card, PK'
+                  tests:
+                     - unique
+                     - not_null
+               -  name: cardtype
+                  description: 'Credit card type name'
+
+         -  name: address
+            description: 'Address information for customers, employees, and vendors'
+            columns:
+               -  name: addressid
+                  description: 'Identity number of entity address, PK'
+                  tests:
+                     - unique
+                     - not_null
+               -  name: city
+                  description: 'City'
+                  tests:
+                     - not_null
+               -  name: stateprovinceid
+                  description: 'State identificatin number, FK to stateprovince.stateprovinveid'
+                  tests:
+                     - not_null
+
          # -  name: 
          #    description: ''
-
 
 

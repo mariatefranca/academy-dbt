@@ -1,0 +1,14 @@
+version: 2
+
+models:
+ 
+    - name: stg_raw_creditcard
+      description: 'Customer credit card information'
+      columns:
+          - name: creditcardid_cc
+            description: 'Identity number of customer credit card, PK'
+            tests:
+                - unique
+                - not_null
+          - name: cardtype
+            description: 'Credit card type name'
