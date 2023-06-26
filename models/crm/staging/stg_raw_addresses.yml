@@ -1,0 +1,23 @@
+version: 2
+
+models:
+ 
+    - name: stg_raw_addresses
+      description: 'Model with address information of city and id for customers, employees, and vendors'
+      columns:
+
+          - name: addressid_ad
+            description: 'Identity number of entity address, PK'
+            tests:
+                - unique
+                - not_null
+
+          - name: city
+            description: 'City name'
+            tests:
+                - not_null
+
+          - name: stateprovinceid_ad
+            description: 'State identificatin number, FK to stateprovince.stateprovinveid'
+            tests:
+                - not_null
