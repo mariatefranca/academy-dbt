@@ -153,11 +153,28 @@ sources:
                      - unique
                      - not_null
                -  name: city
-                  description: 'City'
+                  description: 'City name'
                   tests:
                      - not_null
                -  name: stateprovinceid
                   description: 'State identificatin number, FK to stateprovince.stateprovinveid'
+                  tests:
+                     - not_null
+
+         -  name: stateprovince
+            description: 'State information for customers, employees, and vendors'
+            columns:
+               -  name: stateprovinceid
+                  description: 'Identity number of entity state address, PK'
+                  tests:
+                     - unique
+                     - not_null
+               -  name: name
+                  description: 'State or province name'
+                  tests:
+                     - not_null
+               -  name: countryregioncode
+                  description: 'ountry or region code., FK to countryregion.countryregioncode'
                   tests:
                      - not_null
 

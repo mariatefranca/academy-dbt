@@ -1,0 +1,23 @@
+version: 2
+
+models:
+
+    - name: stg_raw_stateprovince
+      description: 'Model with state informations and countryregioncode for customers, employees, and vendors'
+      columns:
+
+          - name: stateprovinceid
+            description: 'Identity number of entity state address, PK'
+            tests:
+                - unique
+                - not_null
+
+          - name: state_name
+            description: 'State or province name'
+            tests:
+                - not_null
+
+          - name: countryregioncode_sp
+            description: 'ountry or region code., FK to countryregion.countryregioncode'
+            tests:
+                - not_null
