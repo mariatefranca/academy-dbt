@@ -1,0 +1,16 @@
+version: 2
+
+models:
+ 
+    - name: stg_raw_productsubcategory
+      description: Model with informations about product subcategory
+      columns:
+
+          - name: productsubcategoryid
+            description: 'Identity number of product subcategory, PK'
+            tests:
+                - unique
+                - not_null
+
+          - name: productsubcategory_name
+            description: 'Name of product subcategory'

@@ -118,11 +118,21 @@ sources:
                   description: 'Name of the product'
                   tests:
                      - unique
-               -  name: subcategory
-                  description: 'Subcategory of the product'
+               -  name: productsubcategoryid
+                  description: 'Identity number of product subcategory, FK to productsubcategory.productsubcategoryid'
 
-         # -  name: 
-         #    description: ''
+         -  name: productsubcategory
+            description: 'Informations about product subcategory'
+            columns:
+               -  name: productsubcategoryid
+                  description: 'Identity number of product subcategory, PK'
+                  tests:
+                     - unique
+                     - not_null
+               -  name: name
+                  description: 'Name of product subcategory'
+
+
          # -  name: 
          #    description: ''
 
