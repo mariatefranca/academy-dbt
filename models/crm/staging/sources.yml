@@ -191,6 +191,17 @@ sources:
                   tests:
                      - not_null
 
+         -  name: customer
+            description: 'Customer informations'
+            columns:
+               -  name: customerid
+                  description: 'Customer identity number, PK'
+                  tests:
+                     - unique
+                     - not_null
+               -  name: personid
+                  description: 'Person identity number, FK to person.personid'
+
          # -  name: 
          #    description: ''
 
