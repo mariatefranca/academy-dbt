@@ -174,7 +174,20 @@ sources:
                   tests:
                      - not_null
                -  name: countryregioncode
-                  description: 'ountry or region code., FK to countryregion.countryregioncode'
+                  description: 'Country or region code, FK to countryregion.countryregioncode'
+                  tests:
+                     - not_null
+
+         -  name: countryregion
+            description: 'ISO standard codes for countries and regions'
+            columns:
+               -  name: countryregioncode
+                  description: 'Country or region code, PK'
+                  tests:
+                     - unique
+                     - not_null
+               -  name: name
+                  description: 'Country or region name'
                   tests:
                      - not_null
 
