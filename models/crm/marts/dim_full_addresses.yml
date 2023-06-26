@@ -1,0 +1,30 @@
+version: 2
+
+models:
+ 
+    - name: dim_full_addresses
+      description: 'Model with full address information, including city, state and country, for customers, employees, and vendors'
+      columns:
+
+          - name: full_addresses_sk
+            description: 'Identity number of entity address, PK'
+            tests:
+              - unique
+              - not_null
+
+          - name: city_name
+            description: 'City name'
+            tests:
+              - unique
+              - not_null
+
+          - name: state_name
+            description: 'State or province name'
+            tests:
+              - unique
+              - not_null
+
+          - name: country_name
+            description: 'Country or region name'
+            tests:
+              - not_null
