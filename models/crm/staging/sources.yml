@@ -202,7 +202,26 @@ sources:
                -  name: personid
                   description: 'Person identity number, FK to person.personid'
 
-         # -  name: 
-         #    description: ''
-
+         -  name: person
+            description: 'Customer informations'
+            columns:
+               -  name: businessentityid
+                  description: 'Person identity number, PK'
+                  tests:
+                     - unique
+                     - not_null
+               -  name: persontype
+                  description: 'Type of person: 
+                                 SC = Store Contact, 
+                                 IN = Individual customer, 
+                                 SP = Sales person, 
+                                 EM = Employee (non-sales), 
+                                 VC = Vendor contact, 
+                                 GC = General contact'
+               -  name: firstname
+                  description: 'Person first name'
+               -  name: middlename
+                  description: 'Person middle name'
+               -  name: lastname
+                  description: 'Person last name'
 
