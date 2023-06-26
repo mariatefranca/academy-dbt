@@ -1,4 +1,4 @@
-lh_desafio_ae:
+desafio_ae_lh:
   target: dev
   outputs:
     dev:

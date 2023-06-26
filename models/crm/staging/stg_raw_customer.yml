@@ -1,0 +1,18 @@
+version: 2
+
+models:
+
+    - name: stg_raw_customer
+      description: 'Model with customer id and person id informations'
+      columns:
+
+          - name: customerid_cus
+            description: 'Customer identity number, PK'
+            tests:
+                - unique
+                - not_null
+
+          - name: personid_cus
+            description: 'Person identity number, FK to person.personid'
+            tests:
+                - not_null

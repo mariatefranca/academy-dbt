@@ -1,0 +1,31 @@
+version: 2
+
+models:
+
+    - name: stg_raw_person
+      description: 'Model with employees, customer, and vendor informations'
+      columns:
+
+          - name: personid
+            description: 'Person identity number, PK'
+            tests:
+                - unique
+                - not_null
+
+          - name: persontype
+            description: 'Type of person: 
+                            SC = Store Contact, 
+                            IN = Individual customer, 
+                            SP = Sales person, 
+                            EM = Employee (non-sales), 
+                            VC = Vendor contact, 
+                            GC = General contact'
+
+          - name: firstname
+            description: 'Person first name'
+
+          - name: middlename
+            description: 'Person middle name'
+
+          - name: lastname
+            description: 'Person last name'

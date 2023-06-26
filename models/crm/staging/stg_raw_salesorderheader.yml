@@ -1,0 +1,64 @@
+version: 2
+
+models:
+ 
+   -  name: stg_raw_salesorderheader
+      description: Model with relevant sales order informations.
+      columns:
+
+         -  name: salesorderid
+            description: 'Order identification number, PK'
+            tests:
+               - unique
+               - not_null
+         -  name: subtotal
+            description: 'SUM(SalesOrderDetail.LineTotal)'
+
+         -  name: taxamt
+            description: 'Tax amount'
+
+         -  name: freight
+            description: 'Shipping cost'
+
+         -  name: totaldue
+            description: 'Total due from customer (Subtotal + TaxAmt + Freight)'
+
+         -  name: orderdate
+            description: 'Dates the sales order was created'
+
+         -  name: duedate
+            description: 'Date the order is due to the customer'
+
+         -  name: orderdate
+            description: 'Date the order was shipped to the customer'
+
+         -  name: shipmethodid
+            description: 'Shipping method, FK to ShipMethod.ShipMethodID'
+            tests:
+               - not_null
+
+         -  name: status
+            description: 'Order current status 1.In process 2.Approved; 3.Backordered; 4.Rejected; 5.Shipped; 6.Cancelled'
+
+         -  name: onlineorderflag
+            description: '0.Order placed by sales person 1.Order placed online by customer'
+
+         -  name: salespersonid
+            description: 'Sales person who created the sales order, FK to SalesPerson.BusinessEntityID'
+            tests:
+               - not_null
+
+         -  name: customerid
+            description: 'Customer identification number, FK to Customer.BusinessEntityID.Identity'
+            tests:
+               - not_null
+
+         -  name: shiptoaddressid
+            description: 'Customer shipping address, FK to Address.AddressID.'
+            tests:
+               - not_null
+
+         -  name: creditcardid
+            description: 'Credit card identification number, FK to CreditCard.CreditCardID'
+            tests:
+               - not_null
