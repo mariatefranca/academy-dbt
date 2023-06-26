@@ -6,9 +6,9 @@ with
       , taxamt
       , freight
       , totaldue
-      , cast(orderdate as date) as orderdate
-      , cast(duedate as date) as duedate
-      , cast(shipdate as date) as shipdate
+      , cast(orderdate as datetime) as orderdate
+      , cast(duedate as datetime) as duedate
+      , cast(shipdate as datetime) as shipdate
       , shipmethodid
       , status as sales_status
       , onlineorderflag
