@@ -29,7 +29,7 @@ models:
          -  name: duedate
             description: 'Date the order is due to the customer'
 
-         -  name: orderdate
+         -  name: shipdate
             description: 'Date the order was shipped to the customer'
 
          -  name: shipmethodid

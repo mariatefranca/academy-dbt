@@ -27,7 +27,7 @@ sources:
                   description: 'Dates the sales order was created'
                -  name: duedate
                   description: 'Date the order is due to the customer'
-               -  name: orderdate
+               -  name: shipdate
                   description: 'Date the order was shipped to the customer'
                -  name: shipmethodid
                   description: 'Shipping method, FK to shipmethod.shipmethodidid'
@@ -101,8 +101,8 @@ sources:
                   tests:
                      - unique
                      - not_null
-               -  name: name
-                  description: 'Sales reason description'
+               -  name: reasontype
+                  description: 'Sales reason category description'
                   tests:
                      - not_null
 

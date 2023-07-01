@@ -12,7 +12,7 @@ models:
               - unique
               - not_null
 
-        - name: name
-          description: 'Sales reason description.'
+        - name: reasontype
+          description: 'Sales reason category description'
           tests:
               - not_null
