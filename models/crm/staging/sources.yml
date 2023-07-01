@@ -39,8 +39,6 @@ sources:
                   description: '0.Order placed by sales person 1.Order placed online by customer'
                -  name: salespersonid
                   description: 'Sales person who created the sales order, FK to SalesPerson.BusinessEntityID'
-                  tests:
-                    - not_null
                -  name: customerid
                   description: 'Customer identification number, FK to customer.businessentityid.identity'
                   tests:
@@ -50,9 +48,7 @@ sources:
                   tests:
                     - not_null
                -  name: creditcardid
-                  description: 'Credit card identification number, FK to creditcard.creditcardid'
-                  tests:
-                    - not_null
+                  description: 'Credit card identification number when a creditcard was used for payment, FK to creditcard.creditcardid'
 
          -  name: salesorderdetail
             description: 'Details of individual products associated with each sales order in salesorderheader'

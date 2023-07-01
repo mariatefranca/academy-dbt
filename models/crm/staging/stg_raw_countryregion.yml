@@ -12,7 +12,7 @@ models:
                 - unique
                 - not_null
 
-          - name: name
+          - name: country_name
             description: 'Country or region name'
             tests:
                 - not_null

@@ -37,7 +37,7 @@ models:
             tests:
                - not_null
 
-         -  name: status
+         -  name: sales_status
             description: 'Order current status 1.In process 2.Approved; 3.Backordered; 4.Rejected; 5.Shipped; 6.Cancelled'
 
          -  name: onlineorderflag
@@ -45,8 +45,6 @@ models:
 
          -  name: salespersonid
             description: 'Sales person who created the sales order, FK to SalesPerson.BusinessEntityID'
-            tests:
-               - not_null
 
          -  name: customerid
             description: 'Customer identification number, FK to Customer.BusinessEntityID.Identity'
@@ -59,6 +57,4 @@ models:
                - not_null
 
          -  name: creditcardid
-            description: 'Credit card identification number, FK to CreditCard.CreditCardID'
-            tests:
-               - not_null
+            description: 'Credit card identification number when a creditcard was used for payment, FK to CreditCard.CreditCardID'
