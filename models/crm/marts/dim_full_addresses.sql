@@ -1,4 +1,6 @@
-with addresses as (
+with 
+
+addresses as (
     select * 
     from {{ref('stg_raw_addresses')}}
 )

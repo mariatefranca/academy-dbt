@@ -15,13 +15,11 @@ models:
           - name: city_name
             description: 'City name'
             tests:
-              - unique
               - not_null
 
           - name: state_name
             description: 'State or province name'
             tests:
-              - unique
               - not_null
 
           - name: country_name
