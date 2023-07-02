@@ -1,0 +1,29 @@
+version: 2
+
+models:
+ 
+    - name: dim_products
+      description: Model that contains product details, including product id, product name and subcategory name.
+      columns:
+
+        - name: product_sk
+          description: 'The surrogate key for for the dim_products'
+          tests:
+              - not_null
+              - unique
+
+        - name: productid_p
+          description: 'Order identification number, PK'
+          tests:
+              - unique
+              - not_null
+
+        - name: product_name
+          description: 'Name of the product'
+          tests:
+              - not_null
+
+        - name: productsubcategory_name
+          description: 'Name of product subcategory'
+          tests:
+              - not_null

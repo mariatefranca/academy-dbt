@@ -5,8 +5,13 @@ models:
     - name: dim_full_addresses
       description: 'Model with full address information, including city, state and country, for customers, employees, and vendors'
       columns:
-
           - name: full_addresses_sk
+            description: 'The surrogate key for dim_full_addresses'
+            tests:
+              - unique
+              - not_null
+
+          - name: addressid_ad
             description: 'Identity number of entity address, PK'
             tests:
               - unique
