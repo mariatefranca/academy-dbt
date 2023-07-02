@@ -1,0 +1,76 @@
+version: 2
+
+models:
+ 
+    - name: fct_salesdetails
+      description: Model with sales order details, including .
+      columns:
+
+        - name: salesdetails_sk
+          description: 'Surrogate key for fct_salesdetails'
+          tests:
+              - not_null
+              - unique
+
+        - name: salesorderdetailid
+          description: 'Order detail identification number, PK'
+          tests:
+            - unique
+            - not_null
+
+        - name: orderqty
+          description: 'Quantity of product ordered'
+          tests:
+            - not_null
+
+        - name: productid
+          description: 'Order identifition of the product sold, FK to product.productid'
+          tests:
+            - not_null
+
+        - name: unitprice
+          description: 'Selling price per unit'
+          tests:
+            - not_null
+
+        - name: unitpricediscount
+          description: 'Discount'
+          tests:
+            - not_null
+
+        - name: linetotal
+          description: 'Subtotal per product calculated as unitprice*(1-unitpricepiscount)*OrderQty'
+          tests:
+            - not_null
+
+        - name: orderdate
+          description: 'Dates the sales order was created'
+
+        - name: duedate
+          description: 'Date the order is due to the customer'
+
+        - name: shipdate
+          description: 'Date the order was shipped to the customer'
+
+        - name: sales_status
+          description: 'Order current status is In process, Approved, Backordered, Rejected, Shipped or Cancelled'
+
+        - name: salespersonid
+          description: 'Id of the sales person who created the sales order, if 0 then is No vendor, FK to SalesPerson.BusinessEntityID'
+          tests:
+              - not_null
+
+        - name: customerid
+          description: 'Customer identification number, FK to Customer.BusinessEntityID.Identity'
+          tests:
+              - not_null
+
+        - name: shiptoaddressid
+          description: 'Customer shipping address, FK to Address.AddressID.'
+          tests:
+              - not_null
+
+        - name: cardtype
+          description: 'Credit card type name'
+          tests:
+              - not_null
