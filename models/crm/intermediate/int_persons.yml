@@ -2,8 +2,8 @@ version: 2
 
 models:
 
-    - name: stg_raw_person
-      description: 'Model with employee, customer, and vendor informations'
+    - name: int_persons
+      description: 'Model with employees, customer, and vendor informations'
       columns:
 
           - name: personid
@@ -21,11 +21,7 @@ models:
                             VC = Vendor contact, 
                             GC = General contact'
 
-          - name: firstname
-            description: 'Person first name'
-
-          - name: middlename
-            description: 'Person middle name'
-
-          - name: lastname
-            description: 'Person last name'
+          - name: person_name
+            description: 'Person full name'
+            tests:
+                - not_null
