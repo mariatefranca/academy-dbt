@@ -1,0 +1,18 @@
+version: 2
+
+models:
+ 
+    - name: int_reasons
+      description: Model that aggregates sales reasons by salesorderid.
+      columns:
+
+        - name: salesorderid_sr
+          description: 'Order identification number, FK  to salesorderheader.orderid'
+          tests:
+              - unique
+              - not_null
+
+        - name: reasons
+          description: 'Sales reason category description'
+          tests:
+              - not_null

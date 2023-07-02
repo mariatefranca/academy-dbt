@@ -15,8 +15,3 @@ models:
           description: 'Sales reason identification number, FK to salesreason.salesreasonid'
           tests:
               - not_null
-
-        - name: modifieddate_sr
-          description: 'Date and time the  sales reason was last updated'
-          tests:
-              - not_null
