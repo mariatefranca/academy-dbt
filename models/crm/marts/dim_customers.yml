@@ -1,0 +1,31 @@
+version: 2
+
+models:
+
+    - name: dim_customers
+      description: 'Model with id, full name and type of customers'
+      columns:
+
+          - name: customer_sk
+            description: 'Surrogate key for dim_customers'
+            tests:
+                - unique
+                - not_null
+
+          - name: customerid_cus
+            description: 'Customer identity number, PK'
+            tests:
+                - unique
+                - not_null
+
+          - name: customer_name
+            description: 'Customer full name'
+            tests:
+                - not_null
+
+          - name: persontype
+            description: 'Type of person: 
+                            SC = Store Contact, 
+                            IN = Individual customer'
+            tests:
+                - not_null
