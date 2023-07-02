@@ -6,6 +6,7 @@ with
       , orderqty
       , productid
       , unitprice
+      , unitpricediscount
     from {{ source('source_adw', 'salesorderdetail') }}
 )
 

@@ -41,7 +41,7 @@ models:
             description: 'Order current status 1.In process 2.Approved; 3.Backordered; 4.Rejected; 5.Shipped; 6.Cancelled'
 
          -  name: onlineorderflag
-            description: '0.Order placed by sales person 1.Order placed online by customer'
+            description: 'False.Order placed by sales person, True.Order placed online by customer'
 
          -  name: salespersonid
             description: 'Sales person who created the sales order, FK to SalesPerson.BusinessEntityID'
