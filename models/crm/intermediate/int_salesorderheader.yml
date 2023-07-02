@@ -1,0 +1,57 @@
+version: 2
+
+models:
+ 
+   -  name: int_salesorderheader
+      description: Model with relevant sales order header informations.
+      columns:
+
+         -  name: salesorderid
+            description: 'Order identification number, PK'
+            tests:
+               - unique
+               - not_null
+
+         -  name: subtotal
+            description: 'SUM(SalesOrderDetail.LineTotal)'
+
+         -  name: taxamt
+            description: 'Tax amount'
+
+         -  name: freight
+            description: 'Shipping cost'
+
+         -  name: totaldue
+            description: 'Total due from customer (Subtotal + TaxAmt + Freight)'
+
+         -  name: orderdate
+            description: 'Dates the sales order was created'
+
+         -  name: duedate
+            description: 'Date the order is due to the customer'
+
+         -  name: shipdate
+            description: 'Date the order was shipped to the customer'
+
+         -  name: sales_status
+            description: 'Order current status is In process, Approved, Backordered, Rejected, Shipped or Cancelled'
+
+         -  name: salespersonid
+            description: 'Id of the sales person who created the sales order, if 0 then is No vendor, FK to SalesPerson.BusinessEntityID'
+            tests:
+               - not_null
+
+         -  name: customerid
+            description: 'Customer identification number, FK to Customer.BusinessEntityID.Identity'
+            tests:
+               - not_null
+
+         -  name: shiptoaddressid
+            description: 'Customer shipping address, FK to Address.AddressID.'
+            tests:
+               - not_null
+
+         -  name: cardtype
+            description: 'Credit card type name'
+            tests:
+               - not_null
