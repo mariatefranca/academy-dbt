@@ -1,7 +1,8 @@
 with
     salesorderdetail as (
         select *
-        , unitprice*(1-unitpricediscount)*orderqty as linetotal
+        , unitprice*(1-unitpricediscount)*orderqty as linetotal_liq
+        , unitprice*orderqty as linetotal_regular
         from {{ ref('stg_raw_salesorderdetail') }}
     )
 
@@ -19,12 +20,13 @@ with
             , salesorderdetail.productid
             , salesorderdetail.unitprice
             , salesorderdetail.unitpricediscount 
-            , salesorderdetail.linetotal
+            , salesorderdetail.linetotal_liq
+            , salesorderdetail.linetotal_regular
             , orderheader.taxamt_perc
             , orderheader.freight_perc
-            , salesorderdetail.linetotal + (
-                salesorderdetail.linetotal*orderheader.taxamt_perc) + (
-                salesorderdetail.linetotal*orderheader.freight_perc) as totaldue
+            , salesorderdetail.linetotal_liq + (
+                salesorderdetail.linetotal_liq*orderheader.taxamt_perc) + (
+                salesorderdetail.linetotal_liq*orderheader.freight_perc) as totaldue
             , orderheader.orderdate
             , orderheader.duedate
             , orderheader.sales_status

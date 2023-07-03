@@ -38,8 +38,13 @@ models:
           tests:
             - not_null
 
-        - name: linetotal
-          description: 'Subtotal per product calculated as unitprice*(1-unitpricepiscount)*OrderQty'
+        - name: linetotal_liq
+          description: 'Subtotal per product calculated as unitprice*(1-unitpricepiscount)*orderqty'
+          tests:
+            - not_null
+
+        - name: linetotal_regular
+          description: 'Subtotal per product calculated as unitprice**orderqty'
           tests:
             - not_null
 
