@@ -43,6 +43,15 @@ models:
           tests:
             - not_null
 
+        - name: taxamt_perc
+          description: 'Tax amount percentage of linetotal'
+
+        - name: freight_perc
+          description: 'Shipping cost percentage of linetotal'
+
+        - name: totaldue
+          description: 'Total due from customer (linetotal + (taxam_perc*linetotal) + (freight*linetotal))'
+
         - name: orderdate
           description: 'Dates the sales order was created'
 

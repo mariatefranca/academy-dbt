@@ -13,16 +13,22 @@ models:
                - not_null
 
          -  name: subtotal
-            description: 'SUM(SalesOrderDetail.LineTotal)'
+            description: 'SUM(salesorderdetail.linetotal)'
 
          -  name: taxamt
             description: 'Tax amount'
 
+         -  name: taxamt_perc
+            description: 'Tax amount percentage of subtotal'
+
          -  name: freight
             description: 'Shipping cost'
 
+         -  name: freight_perc
+            description: 'Shipping cost percentage of subtotal'
+
          -  name: totaldue
-            description: 'Total due from customer (Subtotal + TaxAmt + Freight)'
+            description: 'Total due from customer (subtotal + taxamt + freight)'
 
          -  name: orderdate
             description: 'Dates the sales order was created'

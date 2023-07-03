@@ -4,7 +4,9 @@ with
             salesorderid
             , subtotal
             , taxamt
+            , taxamt/subtotal as taxamt_perc
             , freight
+            , freight/subtotal as freight_perc
             , totaldue
             , orderdate
             , duedate
@@ -39,7 +41,9 @@ with
             salesorderheader_transformed.salesorderid
             , salesorderheader_transformed.subtotal
             , salesorderheader_transformed.taxamt
+            , salesorderheader_transformed.taxamt_perc
             , salesorderheader_transformed.freight
+            , salesorderheader_transformed.freight_perc
             , salesorderheader_transformed.totaldue
             , salesorderheader_transformed.orderdate
             , salesorderheader_transformed.duedate

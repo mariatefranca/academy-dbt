@@ -1,12 +1,12 @@
 with
     salesorderheadersalesreason as (
         select * 
-        from {{ref('stg_raw_salesorderheadersalesreason')}}
+        from {{ ref('stg_raw_salesorderheadersalesreason') }}
     )
 
     , salesreason as (
         select * 
-        from {{ref('stg_raw_salesreason')}}
+        from {{ ref('stg_raw_salesreason') }}
     )
 
     /* Aggregating sales reason type name by salesorderid */
