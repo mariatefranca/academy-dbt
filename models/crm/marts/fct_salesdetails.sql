@@ -32,6 +32,7 @@ with
             , orderheader.customerid
             , orderheader.shiptoaddressid
             , orderheader.cardtype
+            , orderheader.salesorderid
         from salesorderdetail
         left join orderheader
             on salesorderdetail.salesorderid_od = orderheader.salesorderid

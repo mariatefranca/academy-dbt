@@ -83,3 +83,8 @@ models:
           description: 'Credit card type name'
           tests:
               - not_null
+
+        - name: salesorderid
+          description: 'Order identification number, FK to int_salesorderheader.salesorderid'
+          tests:
+              - not_null
