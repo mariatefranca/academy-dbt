@@ -6,14 +6,11 @@ with
             , case
                 when reasons in ('Other & Other', 'Other')
                     then 'Other'
-                when reasons in ('Other & Promotion', 'Other & Promotion & Other', 'Promotion & Other')
-                    then 'Promotion & Other'
-                when reasons = 'Marketing & Other'
-                    then 'Marketing & Other'
-                when reasons = 'Marketing'
-                    then 'Marketing'
-                when reasons = 'Promotion'
-                    then 'Promotion'                   
+                when reasons in ('Other & Promotion', 'Other & Promotion & Other'
+                    , 'Promotion & Other', 'Promotion')
+                    then 'Promotion'
+                when reasons in ('Marketing & Other', 'Marketing')
+                    then 'Marketing'                 
             end as reasons
         from {{ ref('int_reasons') }}
     )
