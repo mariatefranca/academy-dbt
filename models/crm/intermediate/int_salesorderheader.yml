@@ -2,8 +2,8 @@ version: 2
 
 models:
  
-   -  name: stg_raw_salesorderheader
-      description: Model with relevant sales order informations.
+   -  name: int_salesorderheader
+      description: Model with relevant sales order header informations.
       columns:
 
          -  name: salesorderid
@@ -11,17 +11,24 @@ models:
             tests:
                - unique
                - not_null
+
          -  name: subtotal
-            description: 'SUM(SalesOrderDetail.LineTotal)'
+            description: 'SUM(salesorderdetail.linetotal)'
 
          -  name: taxamt
             description: 'Tax amount'
 
+         -  name: taxamt_perc
+            description: 'Tax amount percentage of subtotal'
+
          -  name: freight
             description: 'Shipping cost'
 
+         -  name: freight_perc
+            description: 'Shipping cost percentage of subtotal'
+
          -  name: totaldue
-            description: 'Total due from customer (Subtotal + TaxAmt + Freight)'
+            description: 'Total due from customer (subtotal + taxamt + freight)'
 
          -  name: orderdate
             description: 'Dates the sales order was created'
@@ -32,19 +39,13 @@ models:
          -  name: shipdate
             description: 'Date the order was shipped to the customer'
 
-         -  name: shipmethodid
-            description: 'Shipping method, FK to ShipMethod.ShipMethodID'
-            tests:
-               - not_null
-
          -  name: sales_status
-            description: 'Order current status 1.In process 2.Approved; 3.Backordered; 4.Rejected; 5.Shipped; 6.Cancelled'
-
-         -  name: onlineorderflag
-            description: 'False.Order placed by sales person, True.Order placed online by customer'
+            description: 'Order current status is In process, Approved, Backordered, Rejected, Shipped or Cancelled'
 
          -  name: salespersonid
-            description: 'Sales person who created the sales order, FK to SalesPerson.BusinessEntityID'
+            description: 'Id of the sales person who created the sales order, if 0 then is No vendor, FK to SalesPerson.BusinessEntityID'
+            tests:
+               - not_null
 
          -  name: customerid
             description: 'Customer identification number, FK to Customer.BusinessEntityID.Identity'
@@ -56,5 +57,7 @@ models:
             tests:
                - not_null
 
-         -  name: creditcardid
-            description: 'Credit card identification number when a creditcard was used for payment, FK to CreditCard.CreditCardID'
+         -  name: cardtype
+            description: 'Credit card type name'
+            tests:
+               - not_null

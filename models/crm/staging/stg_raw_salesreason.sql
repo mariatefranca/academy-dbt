@@ -2,7 +2,7 @@ with
   salesreason as (
     select
       salesreasonid 
-      , name as name_sr
+      , reasontype as reasontype
     from {{ source('source_adw', 'salesreason') }}
 )
 

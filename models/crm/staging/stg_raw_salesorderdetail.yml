@@ -19,6 +19,8 @@ models:
 
           - name: orderqty
             description: 'Quantity of product ordered'
+            tests:
+              - not_null
 
           - name: productid
             description: 'Order identifition of the product sold, FK to product.productid'
@@ -27,6 +29,10 @@ models:
 
           - name: unitprice
             description: 'Selling price per unit'
+            tests:
+              - not_null
 
           - name: unitpricediscount
             description: 'Discount'
+            tests:
+              - not_null
