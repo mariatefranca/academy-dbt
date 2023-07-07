@@ -1,16 +1,21 @@
 # Indicium Academy
 
-Repositório para ser utilizado no desafio para a obtenção da certificação de Analytics Engineer by Indicium. Faça o fork deste repositório e o utilize durante o desafio para fazer a insgestão das tabelas do SAP do Adventure Works.
+Repositório foi utilizado no desafio para a obtenção da certificação de Analytics Engineer by Indicium.
 
 ## Instruções
 
-Todas as tabelas do banco fonte do SAP da Adventure Works serão carregadas como seeds pelo dbt. Os arquivos .csv com os dados já estão na pasta de seeds.
+Faça um fork deste repositório e clone no seu computador.
 
-Para fazer o carregamento de todas as tabelas usem o comando:
+Cria uma virtual env e instale o pacote requierements.txt.
+
+Todas as tabelas do banco fonte do SAP da Adventure Works podem ser carregadas como seeds pelo dbt. Os arquivos .csv com os dados já estão na pasta de seeds.
+
+Para fazer o carregamento de todas as tabelas configure o seu acesso com uma dataware house e utilize o comando abaixo para carregar as tabelas de csv:
 - `dbt seed`
 
 Para carregar uma tabela especifíca utilizem o comando
 - `dbt seed -s nome_do_csv`
+
 
 ### Problemas comuns
 
