@@ -5,7 +5,7 @@ with
       , persontype
       , firstname
       , middlename
-      , person.lastname
+      , lastname
     from {{ source('source_adw', 'person') }}
 )
 
