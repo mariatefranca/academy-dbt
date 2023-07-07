@@ -4,7 +4,7 @@ Repositório foi utilizado no desafio para a obtenção da certificação de Ana
 
 ## Instruções
 
-Faça um fork deste repositório e clone no seu computador.
+Faça um fork deste repositório e clone o repositório no seu computador.
 
 Cria uma virtual env e instale o pacote requierements.txt.
 
